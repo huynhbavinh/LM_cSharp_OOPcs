@@ -11,6 +11,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -69,7 +69,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ALLWinFormAPP\Controller\admin.cs" />
     <Compile Include="ALLWinFormAPP\FcardLibrary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,21 +99,7 @@
     <Compile Include="ALLWinFormAPP\FSearching.Designer.cs">
       <DependentUpon>FSearching.cs</DependentUpon>
     </Compile>
-    <Compile Include="myDB\Models.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Models.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="myDB\Models.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Models.tt</DependentUpon>
-    </Compile>
-    <Compile Include="myDB\Models.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Models.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Controller\adminControl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ALLWinFormAPP\FcardLibrary.resx">
@@ -141,13 +126,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="myDB\Models.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Models.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="myDB\Models.edmx.diagram">
-      <DependentUpon>Models.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -175,26 +153,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="myDB\myDB.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="myDB\Models.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Models.Context.cs</LastGenOutput>
-      <DependentUpon>Models.edmx</DependentUpon>
-    </Content>
-    <Content Include="myDB\Models.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Models.edmx</DependentUpon>
-      <LastGenOutput>Models.cs</LastGenOutput>
-    </Content>
-    <Content Include="myDB\myDB_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>myDB.mdf</DependentUpon>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Folder Include="myDB\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
